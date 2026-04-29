@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be Smart - Planos de Saúde</title>
+    <title>Be Smart - Playbook Estratégico</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -117,6 +117,23 @@
                                 <button onclick="navigateTo('individual-reajuste')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="individual-reajuste">Reajuste</button>
                                 <button onclick="navigateTo('individual-cancelamento')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="individual-cancelamento">Cancelamento</button>
                                 <button onclick="navigateTo('individual-preco')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="individual-preco">Preço</button>
+                            </div>
+                        </div>
+
+                        <!-- Plano PJ (+99 vidas) -->
+                        <div class="mb-2">
+                            <button onclick="toggleSubmenu('pj99')" class="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-bold text-sm transition-all group">
+                                <i data-lucide="building" class="w-[18px] group-hover:text-be-smart"></i><span>Plano PJ (+99 vidas)</span>
+                                <i data-lucide="chevron-right" id="icon-pj99" class="ml-auto w-3.5 h-3.5 transition-transform"></i>
+                            </button>
+                            <div id="sub-pj99" class="hidden mt-1 space-y-1 border-l border-white/10 ml-6 pl-2">
+                                <button onclick="navigateTo('pj99-contratacao')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="pj99-contratacao">Contratação</button>
+                                <button onclick="navigateTo('pj99-vigencia')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="pj99-vigencia">Vigência</button>
+                                <button onclick="navigateTo('pj99-carencia')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="pj99-carencia">Carência</button>
+                                <button onclick="navigateTo('pj99-documentacao')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="pj99-documentacao">Documentação</button>
+                                <button onclick="navigateTo('pj99-reajuste')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="pj99-reajuste">Reajuste</button>
+                                <button onclick="navigateTo('pj99-cancelamento')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="pj99-cancelamento">Cancelamento</button>
+                                <button onclick="navigateTo('pj99-preco')" class="w-full text-left py-1 text-slate-500 hover:text-be-smart text-xs submenu-item" data-tab="pj99-preco">Análise de Preço</button>
                             </div>
                         </div>
 
@@ -274,11 +291,21 @@
                 cancelamento: cancelamentoFlexivel,
                 preco: "• Maior estabilidade jurídica;\n• Valores tendem a ser superiores devido à proteção contratual da ANS."
             },
+            pj99: {
+                title: "Plano PJ (+99 vidas)",
+                contratacao: "• Destinado a grandes empresas com CNPJ ativo;\n• Mínimo de 100 vidas (titulares + dependentes);\n• Pode ser formatado como Pré-Pagamento (fixo) ou Pós-Pagamento (Custo Operacional).",
+                vigencia: "• Datas negociadas diretamente com a operadora;\n• Geralmente vinculada à assinatura da apólice máster e implantação do grupo.",
+                carencia: "🔥 ISENÇÃO TOTAL:\nGrupos acima de 30 vidas possuem isenção total de carências, inclusive para CPT (Doenças Pré-existentes), conforme RN 195 da ANS.",
+                documentacao: "🏢 EMPRESA / TITULAR:\n- CONTRATO SOCIAL\n- CNPJ\n- RG E CPF OU CNH DO TITULAR DO CNPJ\n- E-MAIL\n- TELEFONE\n\n👨‍👩‍👧‍👦 DEPENDENTES:\n- CERTIDÃO DE NASCIMENTO (SE FOR MENOR DE 18 ANOS)\n- RG E CPF OU CNH\n- VÍNCULO COM O TITULAR (CERTIDÃO DE CASAMENTO OU UNIÃO ESTÁVEL)\n\n👷 FUNCIONÁRIO:\n- RG E CPF OU CNH\n- COMPROVANTE DE VÍNCULO COM A EMPRESA (FGTS, E-SOCIAL, CARTEIRA DE TRABALHO)\n- E-MAIL\n- TELEFONE\n\n👨‍👩‍👧‍👦 DEPENDENTES DO FUNCIONÁRIO:\n- CERTIDÃO DE NASCIMENTO (SE FOR MENOR DE 18 ANOS)\n- RG E CPF OU CNH\n- VÍNCULO COM O TITULAR (CERTIDÃO DE CASAMENTO OU UNIÃO ESTÁVEL)\n\n📊 ANÁLISE TÉCNICA E RISCO:\n- RELATÓRIO DE SINISTRALIDADE DOS ÚLTIMOS 12 MESES\n- DATA DA RENOVAÇÃO\n- RELATÓRIO ANALÍTICO\n- RELAÇÃO DE VIDAS COMPLETA (EXCEL)\n- PERFIL DE UTILIZAÇÃO - Alto uso ou baixo uso? Existência de: Internações recorrentes, Doenças crônicas (sem detalhar dados sensíveis individuais) e Gestante.",
+                reajuste: "• Reajuste Técnico (Loss Ratio): Baseado no equilíbrio financeiro específico daquela apólice (Prêmio x Utilização);\n• Negociação direta entre a empresa e a operadora.",
+                cancelamento: "• Aviso prévio de 60 dias conforme RN 412 ANS;\n• Condições de rescisão regidas pelo contrato máster assinado entre as partes.",
+                preco: "• Estudo técnico personalizado (Capital Global);\n• Valores muito agressivos comparados a qualquer outra modalidade."
+            },
             copart: {
                 title: "Modelos de Coparticipação",
                 total: "🔴 COPARTICIPAÇÃO TOTAL - Definição Clara:\nCoparticipação total é o modelo de plano de saúde em que o cliente paga uma mensalidade mais baixa e participa com um percentual ou valor fixo em praticamente todos os atendimentos que utilizar.\n\n📊 COMO FUNCIONA NA PRÁTICA:\n• 💳 Mensalidade reduzida\n• 🩺 Cobrança ao usar: Consultas, Exames, Terapias e Procedimentos (em muitos casos)\n• 📈 Percentuais comuns: 20% a 50% (varia por operadora)\n• 🛑 Limite por evento e/ou teto mensal (proteção de custo)\n\n💡 EXPLICAÇÃO SIMPLES (PRA CLIENTE):\n\"Na coparticipação total você paga um valor menor todo mês e só participa com uma parte do custo quando usa o plano. Ou seja, não fica pagando caro sem utilizar — você investe conforme a necessidade.\"\n\n🎯 QUANDO FAZ SENTIDO:\n• 👤 Quem usa pouco o plano\n• 💰 Quem quer reduzir custo mensal\n• 📉 Quem prefere pagar sob demanda ao invés de fixo alto\n\n⚠️ PONTO DE ATENÇÃO:\nSe o cliente usa com muita frequência, esse modelo pode gerar mais custo ao longo do tempo — por isso a escolha precisa ser baseada no perfil.\n\n💬 FRASE DE VENDA (DIRETA):\n\"Esse modelo é ideal pra quem quer economizar no valor mensal e usar o plano de forma mais pontual, mantendo proteção quando precisar.\"",
                 parcial: "⚖️ COPARTICIPAÇÃO PARCIAL:\n• Taxas aplicadas apenas em itens específicos (geralmente Terapias e Internamentos).\n• Isenção total em Consultas Simples e Exames Laboratoriais básicos.\n\n🩺 PROCEDIMENTOS GERALMENTE COBRADOS:\n- Psicoterapias (sessões de psicologia).\n- Fisioterapias.\n- Fonoaudiologia.\n- Nutrição (consultas com nutricionista).\n- Terapia Ocupacional.\n\n• OBJETIVO: Equilíbrio entre uma mensalidade justa e liberdade de uso rotineiro.",
-                sem: "🟢 SEM COPARTICIPAÇÃO - Explicação Clara:\nPlano sem coparticipação é aquele em que o cliente paga uma mensalidade fixa mais alta e não paga nada a mais quando utiliza os serviços cobertos.\n\n📊 COMO FUNCIONA NA PRÁTICA:\n• 💳 Mensalidade maior\n• 🩺 Sem cobrança por uso: Consultas, Exames, Internações e Procedimentos cobertos\n• 📉 Custo previsível (você sabe exatamente quanto vai pagar todo mês)\n\n💡 EXPLICAÇÃO SIMPLES (PRA CLIENTE):\n\"No plano sem coparticipação você paga um valor profissional por mês e pode usar consultas, exames e outros serviços sem pagar nada a mais por isso. É mais previsível, porque não tem surpresa no bolso quando precisar usar.\"\n\n🎯 QUANDO FAZ SENTIDO:\n• 👨‍👩‍👧 Quem usa o plano com frequência\n• 🩺 Pessoas com acompanhamento médico recorrente\n• 📅 Quem quer previsibilidade total no orçamento\n\n⚠️ PONTO DE ATENÇÃO:\nSe a pessoa quase não usa o plano, pode acabar pagando mais caro ao longo do tempo — já que a mensalidade é mais alta.\n\n💬 FRASE DE VENDA (DIRETA):\n\"Esse modelo é ideal pra quem quer tranquilidade total — você paga um valor fixo e usa o plano sem se preocupar com cobranças extras.\"\n\n🧠 COMO POSICIONAR BEM:\n👉 Não venda como \"mais caro\"\n👉 Venda como \"mais previsível e seguro\""
+                sem: "🟢 SEM COPARTICIPAÇÃO - Explicação Clara:\nPlano sem coparticipação é aquele em que o cliente paga uma mensalidade fixa mais alta e não paga nada a mais quando utiliza os serviços cobertos.\n\n📊 COMO FUNCIONA NA PRÁTICA:\n• 💳 Mensalidade maior\n• 🩺 Sem cobrança por uso: Consultas, Exames, Internações e Procedimentos cobertos\n• 📉 Custo previsível (você sabe exatamente quanto vai pagar todo mês)\n\n💡 EXPLICAÇÃO SIMPLES (PRA CLIENTE):\n\"No plano sem coparticipação você paga um valor profissional por mês e pode usar consultas, exames e outros serviços sem pagar nada a mais por isso. É mais previsível, porque não tem surpresa no bolso quando precisar usar.\"\n\n🎯 QUANDO FAZ SENTIDO:\n• 👨‍👩‍👧 Quem usa o plano com frequência\n• 🩺 Pessoas com acompanhamento médico recorrente\n• 📅 Quem quer previsibilidade total no orçamento\n\n⚠️ PONTO DE ATENÇÃO:\nSe a pessoa quase não usa o plano, pode acabar pagando mais caro ao longo do tempo — já que a mensalidade é mais alta.\n\n💬 FRASE DE VENDA (DIRETA):\n\"Esse modelo é ideal pra quem quer tranquilidade total — você paga um valor profissional e usa o plano sem se preocupar com cobranças extras.\"\n\n🧠 COMO POSICIONAR BEM:\n👉 Não venda como \"mais caro\"\n👉 Venda como \"mais previsível e seguro\""
             }
         };
 
@@ -501,7 +528,7 @@
                     contentHtml = item.render ? item.render() : createGenericView(item.title, item.content, id);
                 } else if (technicalData[mod] && technicalData[mod][section]) {
                     const item = technicalData[mod];
-                    const titles = { contratacao: "Contratação", vigencia: "Vigência", carencia: "Carência", documentacao: "Documentação", reajuste: "Reajuste", cancelamento: "Cancelamento", preco: "Preço", total: "Coparticipação Total", parcial: "Coparticipação Parcial", sem: "Sem Coparticipação", ambulatorial: "Ambulatorial", hospitalar: "Hospitalar", sob: "Sem Obstetrícia", cob: "Com Obstetrícia", completo: "Plano Completo", enfermaria: "Enfermaria (Coletivo)", apartamento: "Apartamento (Privativo)", diferencas: "Quadro Comparativo" };
+                    const titles = { contratacao: "Contratação", vigencia: "Vigência", carencia: "Carência", documentacao: "Documentação", reajuste: "Reajuste", cancelamento: "Cancelamento", preco: "Análise de Preço", total: "Coparticipação Total", parcial: "Coparticipação Parcial", sem: "Sem Coparticipação", ambulatorial: "Ambulatorial", hospitalar: "Hospitalar", sob: "Sem Obstetrícia", cob: "Com Obstetrícia", completo: "Plano Completo", enfermaria: "Enfermaria (Coletivo)", apartamento: "Apartamento (Privativo)", diferencas: "Quadro Comparativo" };
                     contentHtml = createGenericView(titles[section], item[section], mod, section);
                 }
             } else {
