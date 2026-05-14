@@ -284,19 +284,19 @@
             individual: {
                 title: "Plano Individual (PF)",
                 contratacao: "• Contratação direta como Pessoa Física (CPF);\n• Livre escolha sem necessidade de vínculo empresarial ou associativo.",
-                vigencia: "• Início imediato após confirmação do primeiro pagamento bancário.",
+                vigencia: "• Início imediato após confirmação bancária do pagamento do boleto de implantação (primeiro Boleto).",
                 carencia: carenciaGeral + reducaoCarencia,
                 documentacao: "- RG e CPF ou CNH;\n- Selfie segurando um documento com foto;\n- Comprovante de Residência;\n- E-mail;\n- Telefone;\n- Carta de Permanência (Se houver plano anterior).\n\n👨‍👩‍👧‍👦 EM CASO DE DEPENDENTE:\n- RG e CPF ou CNH;\n- Comprovante de Vínculo com o Titular;\n- Carta de Permanência (Se houver plano anterior)." + obsCartaPermanencia,
-                reajuste: "• Anual, regulado pelo teto da ANS (Agência Nacional de Saúde).",
+                reajuste: "• Aplicado no aniversário do contrato (a cada 12 meses de vigência);\n• Índice regulamentado e limitado pelo teto estabelecido pela ANS (Agência Nacional de Saúde).",
                 cancelamento: cancelamentoFlexivel,
                 preco: "• Maior estabilidade jurídica;\n• Valores tendem a ser superiores devido à proteção contratual da ANS."
             },
             pj99: {
                 title: "Plano PJ (+99 vidas)",
-                contratacao: "• Destinado a grandes empresas com CNPJ ativo;\n• Mínimo de 100 vidas (titulares + dependentes);\n• Pode ser formatado como Pré-Pagamento (fixo) ou Pós-Pagamento (Custo Operacional).",
+                contratacao: "• Destinado a grandes empresas com CNPJ ativo;\n• Mínimo de 100 vidas (titulares + dependentes);\n• Sempre uma negociação mais demorada.",
                 vigencia: "• Datas negociadas diretamente com a operadora;\n• Geralmente vinculada à assinatura da apólice máster e implantação do grupo.",
                 carencia: "🔥 ISENÇÃO TOTAL:\nGrupos acima de 30 vidas possuem isenção total de carências, inclusive para CPT (Doenças Pré-existentes), conforme RN 195 da ANS.",
-                documentacao: "🏢 EMPRESA / TITULAR:\n- CONTRATO SOCIAL\n- CNPJ\n- RG E CPF OU CNH DO TITULAR DO CNPJ\n- E-MAIL\n- TELEFONE\n\n👨‍👩‍👧‍👦 DEPENDENTES:\n- CERTIDÃO DE NASCIMENTO (SE FOR MENOR DE 18 ANOS)\n- RG E CPF OU CNH\n- VÍNCULO COM O TITULAR (CERTIDÃO DE CASAMENTO OU UNIÃO ESTÁVEL)\n\n👷 FUNCIONÁRIO:\n- RG E CPF OU CNH\n- COMPROVANTE DE VÍNCULO COM A EMPRESA (FGTS, E-SOCIAL, CARTEIRA DE TRABALHO)\n- E-MAIL\n- TELEFONE\n\n👨‍👩‍👧‍👦 DEPENDENTES DO FUNCIONÁRIO:\n- CERTIDÃO DE NASCIMENTO (SE FOR MENOR DE 18 ANOS)\n- RG E CPF OU CNH\n- VÍNCULO COM O TITULAR (CERTIDÃO DE CASAMENTO OU UNIÃO ESTÁVEL)\n\n📊 ANÁLISE TÉCNICA E RISCO:\n- RELATÓRIO DE SINISTRALIDADE DOS ÚLTIMOS 12 MESES\n- DATA DA RENOVAÇÃO\n- RELATÓRIO ANALÍTICO\n- RELAÇÃO DE VIDAS COMPLETA (EXCEL)\n- PERFIL DE UTILIZAÇÃO - Alto uso ou baixo uso? Existência de: Internações recorrentes, Doenças crônicas (sem detalhar dados sensíveis individuais) e Gestante.",
+                documentacao: "🏢 EMPRESA / TITULAR:\n🔸 CONTRATO SOCIAL\n🔸 CNPJ\n🔸 RG E CPF OU CNH DO TITULAR DO CNPJ\n🔸 E-MAIL\n🔸 TELEFONE\n\n👨‍👩‍👧‍👦 DEPENDENTES:\n🔸 CERTIDÃO DE NASCIMENTO (SE FOR MENOR DE 18 ANOS)\n🔸 RG E CPF OU CNH\n🔸 VÍNCULO COM O TITULAR (CERTIDÃO DE CASAMENTO OU UNIÃO ESTÁVEL)\n\n👷 FUNCIONÁRIO:\n🔸 RG E CPF OU CNH\n🔸 COMPROVANTE DE VÍNCULO COM A EMPRESA (FGTS, E-SOCIAL, CARTEIRA DE TRABALHO)\n🔸 E-MAIL\n🔸 TELEFONE\n\n👨‍👩‍👧‍👦 DEPENDENTES DO FUNCIONÁRIO:\n🔸 CERTIDÃO DE NASCIMENTO (SE FOR MENOR DE 18 ANOS)\n🔸 RG E CPF OU CNH\n🔸 VÍNCULO COM O TITULAR (CERTIDÃO DE CASAMENTO OU UNIÃO ESTÁVEL)\n\n📊 ANÁLISE TÉCNICA E RISCO:\n🔸 RELATÓRIO DE SINISTRALIDADE DOS ÚLTIMOS 12 MESES;\n🔸 DATA DA RENOVAÇÃO;\n🔸 RELATÓRIO ANALÍTICO;\n🔸 RELAÇÃO DE VIDAS COMPLETA (EXCEL)\n  🔹 SEXO;\n  🔹 MUNICÍPIO / UF;\n  🔹 AFASTADOS (COM CIDs);\n  🔹 APOSENTADOS;\n  🔹 GESTANTES;\n🔸 PERFIL DE UTILIZAÇÃO - Alto uso ou baixo uso? Existência de: Internações recorrentes, Doenças crônicas (sem detalhar dados sensíveis individuais) e Gestante.\n🔸 CARTA DE NOMEAÇÃO PARA AS OPERADORAS ou SEGURADORAS;\n🔸 10 MAIORES UTILIZADORES DOS PLANOS.",
                 reajuste: "• Reajuste Técnico (Loss Ratio): Baseado no equilíbrio financeiro específico daquela apólice (Prêmio x Utilização);\n• Negociação direta entre a empresa e a operadora.",
                 cancelamento: "• Aviso prévio de 60 dias conforme RN 412 ANS;\n• Condições de rescisão regidas pelo contrato máster assinado entre as partes.",
                 preco: "• Estudo técnico personalizado (Capital Global);\n• Valores muito agressivos comparados a qualquer outra modalidade."
@@ -466,7 +466,17 @@
             },
             'qualificacao-avancada': {
                 render: () => {
-                    const questions = ["Quem vai utilizar o plano além de você?", "Idade aproximada dos beneficiários?", "Atualmente possui plano?", "Faz questão de algum hospital/clínica?", "Possui CNPJ ativo?", "Vínculo com entidade/profissão?", "Incluirá funcionários?", "Situação específica (cirurgia/exame)?", "Já recebeu outra proposta?"];
+                    const questions = [
+                        "O plano seria só para você ou mais alguém da sua família vai aproveitar junto?",
+                        "Para eu conseguir calcular os melhores valores, qual a sua idade e a do pessoal que vai entrar?",
+                        "Hoje vocês já têm algum plano de saúde ativo ou seria o primeiro?",
+                        "Tem algum hospital, médico ou laboratório específico que você faz muita questão de ser atendido?",
+                        "Você ou alguém da família tem algum CNPJ ativo? Pergunto porque até um MEI pode baixar bastante o valor do plano.",
+                        "Qual a sua profissão ou área de formação? Dependendo da sua área, conseguimos descontos ótimos por sindicatos ou conselhos.",
+                        "Pensando no CNPJ, você pretende incluir algum funcionário agora ou seria apenas para sócios e família?",
+                        "Alguém que vai entrar faz algum tratamento contínuo, precisa de cirurgia ou pretende engravidar em breve? É só pra eu buscar a melhor opção de carência para vocês.",
+                        "Você já chegou a ver alguma cotação com outra pessoa? Pergunto para entender o que já te mostraram e buscar uma condição ainda melhor."
+                    ];
                     return `
                     <div class="fade-in space-y-6 text-left">
                         <div class="bg-amber-600 p-8 rounded-3xl text-white shadow-lg flex items-center gap-6">
